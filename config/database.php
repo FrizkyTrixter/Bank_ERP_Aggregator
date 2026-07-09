@@ -13,7 +13,7 @@ return [
 
     // Absolute path to the SQLite database file.
     // __DIR__ points to /config, so this resolves to /database/bank_erp.sqlite
-    'sqlite_path' => dirname(__DIR__) . '/database/bank_erp.sqlite',
+    'sqlite_path' => dirname(__DIR__) . '/database/bank_erp.db',
 
     // Future PostgreSQL settings.
     'pgsql' => [
