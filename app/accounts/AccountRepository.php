@@ -33,9 +33,7 @@ class AccountRepository
              WHERE id = :id'
         );
 
-        $stmt->execute([
-            'id' => $id,
-        ]);
+        $stmt->execute(['id' => $id]);
 
         $account = $stmt->fetch();
 
@@ -83,8 +81,6 @@ class AccountRepository
     {
         $stmt = $this->db->prepare('DELETE FROM accounts WHERE id = :id');
 
-        return $stmt->execute([
-            'id' => $id,
-        ]);
+        return $stmt->execute(['id' => $id]);
     }
 }
