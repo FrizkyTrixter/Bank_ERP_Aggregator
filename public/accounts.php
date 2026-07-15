@@ -88,6 +88,11 @@ $formCurrency = $editAccount['currency'] ?? 'CAD';
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container">
             <a class="navbar-brand" href="/accounts.php">Bank ERP Aggregator</a>
+            <div class="navbar-nav flex-row gap-3">
+                <a class="nav-link active" href="/accounts.php">Accounts</a>
+                <a class="nav-link" href="/transactions.php">Transactions</a>
+                <a class="nav-link" href="/import_transactions.php">Import CSV</a>
+            </div>
         </div>
     </nav>
 
