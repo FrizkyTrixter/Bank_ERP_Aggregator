@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: pdo_sqlite
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: PHP syntax
+        run: find . -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Python syntax
+        run: python -m compileall -q scripts
+      - name: Database migration smoke test
+        env:
+          BANK_ERP_SQLITE_PATH: /tmp/bank-erp-ci.db
+        run: python scripts/init_database.py
