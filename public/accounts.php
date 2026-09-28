@@ -98,6 +98,7 @@ $formCurrency = $editAccount['currency'] ?? 'CAD';
                 <a class="nav-link active" href="/accounts.php">Accounts</a>
                 <a class="nav-link" href="/transactions.php">Transactions</a>
                 <a class="nav-link" href="/import_transactions.php">Import CSV</a>
+                <a class="nav-link" href="/trading.php">Agentic Trading</a>
             </div>
         </div>
     </nav>
